@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.1 on win32)" generated="20210714 16:20:49.923" rpa="false" schemaversion="2">
+<suite id="s1" name="Main" source="D:\Seleção Prime Control\Atividade Pratica\Process\Criação_Chave\main.robot">
+<test id="s1-t1" name="Logar na Pagina">
+<kw name="Abrir Browser Para Logar" library="resources">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210714 16:20:50.584" level="INFO">Opening browser 'Chrome' to base url 'https://developer.clashroyale.com/#/login'.</msg>
+<status status="PASS" starttime="20210714 16:20:50.583" endtime="20210714 16:20:54.006"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@id="email"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210714 16:20:54.006" endtime="20210714 16:20:54.396"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:50.583" endtime="20210714 16:20:54.397"/>
+</kw>
+<kw name="Inserir Username" library="resources">
+<arg>${Username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="email"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210714 16:20:54.400" level="INFO">Typing text 'pedroadv991@gmail.com' into text field '//*[@id="email"]'.</msg>
+<status status="PASS" starttime="20210714 16:20:54.399" endtime="20210714 16:20:54.724"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:54.398" endtime="20210714 16:20:54.724"/>
+</kw>
+<kw name="Inserir Password" library="resources">
+<arg>${Password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210714 16:20:54.727" level="INFO">Typing text 'w4nELgZF.JkWr6i' into text field '//*[@id="password"]'.</msg>
+<status status="PASS" starttime="20210714 16:20:54.726" endtime="20210714 16:20:54.973"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:54.725" endtime="20210714 16:20:54.974"/>
+</kw>
+<kw name="Clicar em Logar" library="resources">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//*[@id="content"]/div/div[2]/div/div/div/div/div/div/form/div[4]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210714 16:20:54.976" level="INFO">Clicking button '//*[@id="content"]/div/div[2]/div/div/div/div/div/div/form/div[4]/button'.</msg>
+<status status="PASS" starttime="20210714 16:20:54.975" endtime="20210714 16:20:55.098"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:54.975" endtime="20210714 16:20:55.098"/>
+</kw>
+<kw name="Verificar Se Logado" library="resources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@id="content"]/div/div[2]/div/div/div/div/div/h2/span[1]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210714 16:20:55.120" endtime="20210714 16:20:56.022"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:55.119" endtime="20210714 16:20:56.023"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:50.581" endtime="20210714 16:20:56.024"/>
+</test>
+<test id="s1-t2" name="Criar Nova Chave">
+<kw name="Pegar IP Local" library="resources">
+<var>${IP}</var>
+<kw name="Get My IP" library="IP">
+<var>${IP}</var>
+<msg timestamp="20210714 16:20:56.761" level="INFO">${IP} = 191.220.107.244</msg>
+<status status="PASS" starttime="20210714 16:20:56.027" endtime="20210714 16:20:56.761"/>
+</kw>
+<msg timestamp="20210714 16:20:56.762" level="INFO">${IP} = 191.220.107.244</msg>
+<status status="PASS" starttime="20210714 16:20:56.026" endtime="20210714 16:20:56.762"/>
+</kw>
+<kw name="Acessar Formulario de nova Key" library="resources">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://developer.clashroyale.com/#/new-key</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210714 16:20:56.764" level="INFO">Opening url 'https://developer.clashroyale.com/#/new-key'</msg>
+<status status="PASS" starttime="20210714 16:20:56.763" endtime="20210714 16:20:56.817"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@id="content"]/div/div[2]/div/div/section/div/div/div[1]/h2</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210714 16:20:56.817" endtime="20210714 16:20:56.874"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:56.763" endtime="20210714 16:20:56.875"/>
+</kw>
+<kw name="Inserir KEY NAME" library="resources">
+<arg>${KEY NAME}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="name"]</arg>
+<arg>${KEY NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210714 16:20:56.877" level="INFO">Typing text 'Minha Nova Key 2' into text field '//*[@id="name"]'.</msg>
+<status status="PASS" starttime="20210714 16:20:56.877" endtime="20210714 16:20:57.131"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:56.876" endtime="20210714 16:20:57.131"/>
+</kw>
+<kw name="Inserir KEY DESCRIPTION" library="resources">
+<arg>${KEY DESCRIPTION}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="description"]</arg>
+<arg>${KEY DESCRIPTION}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210714 16:20:57.135" level="INFO">Typing text 'Key Ultilizada Para Acessar a Clash Royale API' into text field '//*[@id="description"]'.</msg>
+<status status="PASS" starttime="20210714 16:20:57.134" endtime="20210714 16:20:57.508"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:57.132" endtime="20210714 16:20:57.508"/>
+</kw>
+<kw name="Inserir IP ADDRESSES" library="resources">
+<arg>${IP}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//*[@id="range-0"]</arg>
+<arg>${IP ADDRESSES}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210714 16:20:57.510" level="INFO">Typing text '191.220.107.244' into text field '//*[@id="range-0"]'.</msg>
+<status status="PASS" starttime="20210714 16:20:57.509" endtime="20210714 16:20:57.737"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:57.509" endtime="20210714 16:20:57.737"/>
+</kw>
+<kw name="Clicar em Create Key" library="resources">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//*[@id="content"]/div/div[2]/div/div/section/div/div/div[2]/form/div[5]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210714 16:20:57.740" level="INFO">Clicking button '//*[@id="content"]/div/div[2]/div/div/section/div/div/div[2]/form/div[5]/button'.</msg>
+<status status="PASS" starttime="20210714 16:20:57.740" endtime="20210714 16:20:57.859"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:57.739" endtime="20210714 16:20:57.859"/>
+</kw>
+<kw name="Acessar Key Criada" library="resources">
+<arg>${KEY NAME}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//h4[contains(.,"${KEY NAME}")]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210714 16:20:57.862" endtime="20210714 16:20:58.756"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//h4[contains(.,"${KEY NAME}")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210714 16:20:58.757" level="INFO">Clicking element 'xpath=//h4[contains(.,"Minha Nova Key 2")]'.</msg>
+<status status="PASS" starttime="20210714 16:20:58.756" endtime="20210714 16:20:58.897"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:57.861" endtime="20210714 16:20:58.898"/>
+</kw>
+<kw name="Pegar Token da Key" library="resources">
+<var>${KEY TOKEN}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//*[@id="content"]/div/div[2]/div/div/section/div/div/div[2]/form/div[1]/div</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210714 16:20:58.901" endtime="20210714 16:20:58.942"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${TOKEN}</var>
+<arg>//*[@id="content"]/div/div[2]/div/div/section/div/div/div[2]/form/div[1]/div</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210714 16:20:58.986" level="INFO">${TOKEN} = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjNjMWYxZjIyLTBmM2UtNDAyMi05YzNmLWR...</msg>
+<status status="PASS" starttime="20210714 16:20:58.942" endtime="20210714 16:20:58.986"/>
+</kw>
+<msg timestamp="20210714 16:20:58.987" level="INFO">${KEY TOKEN} = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjNjMWYxZjIyLTBmM2UtNDAyMi05YzNmLWR...</msg>
+<status status="PASS" starttime="20210714 16:20:58.901" endtime="20210714 16:20:58.987"/>
+</kw>
+<kw name="Salvar Key" library="resources">
+<arg>${KEY NAME}</arg>
+<arg>${KEY DESCRIPTION}</arg>
+<arg>${IP}</arg>
+<arg>${KEY TOKEN}</arg>
+<kw name="Save Key" library="Save">
+<arg>${KEY NAME}</arg>
+<arg>${KEY DESCRIPTION}</arg>
+<arg>${IP}</arg>
+<arg>${KEY TOKEN}</arg>
+<status status="PASS" starttime="20210714 16:20:58.989" endtime="20210714 16:20:58.992"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:58.988" endtime="20210714 16:20:58.992"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210714 16:20:58.993" endtime="20210714 16:21:02.142"/>
+</kw>
+<status status="PASS" starttime="20210714 16:20:56.025" endtime="20210714 16:21:02.143"/>
+</test>
+<doc>Processo com o objetivo gerar Chave de API para Utilização de Clash Royale API</doc>
+<status status="PASS" starttime="20210714 16:20:49.927" endtime="20210714 16:21:02.144"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Main">Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

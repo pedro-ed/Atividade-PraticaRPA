@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.1 on win32)" generated="20210715 20:06:00.647" rpa="false" schemaversion="2">
+<suite id="s1" name="Main" source="D:\Seleção Prime Control\Atividade Pratica\Process\Exportar Membros de Clan\main.robot">
+<test id="s1-t1" name="Extrair Lista de Membros de Clan">
+<kw name="Pegar Token" library="resources">
+<var>${Token}</var>
+<arg>${NameKey}</arg>
+<kw name="Get Token" library="GetKey">
+<var>${Token}</var>
+<arg>${NameKey}</arg>
+<msg timestamp="20210715 20:06:00.938" level="INFO">${Token} = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjNjMWYxZjIyLTBmM2UtNDAyMi05YzNmLWR...</msg>
+<status status="PASS" starttime="20210715 20:06:00.937" endtime="20210715 20:06:00.939"/>
+</kw>
+<msg timestamp="20210715 20:06:00.939" level="INFO">${Token} = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjNjMWYxZjIyLTBmM2UtNDAyMi05YzNmLWR...</msg>
+<status status="PASS" starttime="20210715 20:06:00.936" endtime="20210715 20:06:00.939"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${Token}' == 'Key Not Found'</arg>
+<arg>LogError</arg>
+<arg>Key Not Found</arg>
+<arg>${PROCESS NAME}</arg>
+<arg>ELSE</arg>
+<arg>LogInfo</arg>
+<arg>Token obtido com sucesso</arg>
+<arg>${PROCESS NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log Info" library="Log">
+<arg>Token obtido com sucesso</arg>
+<arg>${PROCESS NAME}</arg>
+<status status="PASS" starttime="20210715 20:06:00.942" endtime="20210715 20:06:00.946"/>
+</kw>
+<status status="PASS" starttime="20210715 20:06:00.940" endtime="20210715 20:06:00.946"/>
+</kw>
+<kw name="Pegar id da Localidade" library="resources">
+<var>${LocationID}</var>
+<arg>${Pais}</arg>
+<arg>${Token}</arg>
+<kw name="Get My Location" library="GetMyLocation">
+<var>${LocationID}</var>
+<arg>${Pais}</arg>
+<arg>${Token}</arg>
+<msg timestamp="20210715 20:06:06.575" level="INFO">${LocationID} = 57000038</msg>
+<status status="PASS" starttime="20210715 20:06:00.949" endtime="20210715 20:06:06.575"/>
+</kw>
+<msg timestamp="20210715 20:06:06.575" level="INFO">${LocationID} = 57000038</msg>
+<status status="PASS" starttime="20210715 20:06:00.947" endtime="20210715 20:06:06.575"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${LocationID}' == 'Location Not Found'</arg>
+<arg>LogError</arg>
+<arg>Location Not Found</arg>
+<arg>${PROCESS NAME}</arg>
+<arg>ELSE</arg>
+<arg>LogInfo</arg>
+<arg>Id de Localidade obtido com sucesso</arg>
+<arg>${PROCESS NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log Info" library="Log">
+<arg>Id de Localidade obtido com sucesso</arg>
+<arg>${PROCESS NAME}</arg>
+<status status="PASS" starttime="20210715 20:06:06.577" endtime="20210715 20:06:06.580"/>
+</kw>
+<status status="PASS" starttime="20210715 20:06:06.576" endtime="20210715 20:06:06.580"/>
+</kw>
+<kw name="Pegar Tag da Clan" library="resources">
+<var>${TagClan}</var>
+<arg>${ClanName}</arg>
+<arg>${Token}</arg>
+<arg>${InitTag}</arg>
+<arg>${LocationID}</arg>
+<kw name="Get Tagby Part" library="Get">
+<var>${TagClan}</var>
+<arg>${ClanName}</arg>
+<arg>${Token}</arg>
+<arg>${InitTag}</arg>
+<arg>${LocationID}</arg>
+<msg timestamp="20210715 20:06:31.906" level="INFO">${TagClan} = #9V2YV8YJ</msg>
+<status status="PASS" starttime="20210715 20:06:06.582" endtime="20210715 20:06:31.906"/>
+</kw>
+<msg timestamp="20210715 20:06:31.906" level="INFO">${TagClan} = #9V2YV8YJ</msg>
+<status status="PASS" starttime="20210715 20:06:06.581" endtime="20210715 20:06:31.906"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${TagClan}' == 'Tag Not Found'</arg>
+<arg>LogError</arg>
+<arg>Tag Not Found</arg>
+<arg>${PROCESS NAME}</arg>
+<arg>ELSE</arg>
+<arg>LogInfo</arg>
+<arg>Tag do Clan Obtido com sucesso</arg>
+<arg>${PROCESS NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log Info" library="Log">
+<arg>Tag do Clan Obtido com sucesso</arg>
+<arg>${PROCESS NAME}</arg>
+<status status="PASS" starttime="20210715 20:06:31.908" endtime="20210715 20:06:31.911"/>
+</kw>
+<status status="PASS" starttime="20210715 20:06:31.907" endtime="20210715 20:06:31.911"/>
+</kw>
+<kw name="Pesquisar por Membros" library="resources">
+<var>${Members}</var>
+<arg>${TagClan}</arg>
+<arg>${Token}</arg>
+<kw name="Get Members" library="GetMembers">
+<var>${Members}</var>
+<arg>${TagClan}</arg>
+<arg>${Token}</arg>
+<msg timestamp="20210715 20:06:36.287" level="INFO">${Members} = [{'Nome': 'VITTOLA', 'Level': 13, 'Trofeus': 6371, 'Papel': 'coLeader'}, {'Nome': '☆JOTTACLASH☆', 'Level': 13, 'Trofeus': 6254, 'Papel': 'coLeader'}, {'Nome': 'Pedro ikharo', 'Level': 13, 'Trofeus': 6...</msg>
+<status status="PASS" starttime="20210715 20:06:31.913" endtime="20210715 20:06:36.287"/>
+</kw>
+<msg timestamp="20210715 20:06:36.288" level="INFO">${Members} = [{'Nome': 'VITTOLA', 'Level': 13, 'Trofeus': 6371, 'Papel': 'coLeader'}, {'Nome': '☆JOTTACLASH☆', 'Level': 13, 'Trofeus': 6254, 'Papel': 'coLeader'}, {'Nome': 'Pedro ikharo', 'Level': 13, 'Trofeus': 6...</msg>
+<status status="PASS" starttime="20210715 20:06:31.911" endtime="20210715 20:06:36.288"/>
+</kw>
+<kw name="Gerar csv com listagem de Membros" library="resources">
+<arg>${Members}</arg>
+<arg>${OutputPath}</arg>
+<arg>${NameReport}</arg>
+<kw name="Export Members" library="Export">
+<arg>${Members}</arg>
+<arg>${OutputPath}</arg>
+<arg>${NameReport}</arg>
+<status status="PASS" starttime="20210715 20:06:36.289" endtime="20210715 20:06:36.291"/>
+</kw>
+<status status="PASS" starttime="20210715 20:06:36.288" endtime="20210715 20:06:36.291"/>
+</kw>
+<kw name="Log Info" library="Log">
+<arg>Listagem dos Membros do Clan ${ClanName} gerado com sucesso em ${OutputPath}${NameReport}.csv</arg>
+<arg>${PROCESS NAME}</arg>
+<status status="PASS" starttime="20210715 20:06:36.292" endtime="20210715 20:06:36.295"/>
+</kw>
+<status status="PASS" starttime="20210715 20:06:00.935" endtime="20210715 20:06:36.296"/>
+</test>
+<doc>Processo com o objetivo gerar Chave de API para Utilização de Clash Royale API</doc>
+<status status="PASS" starttime="20210715 20:06:00.651" endtime="20210715 20:06:36.299"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Main">Main</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
